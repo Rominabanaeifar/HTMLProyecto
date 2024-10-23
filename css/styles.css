@@ -1,0 +1,346 @@
+/* Paleta de colores */
+:root {
+    --color-primario: #1a237e;
+    --color-complementario: #ffc107;
+    --color-neutro: #f5f5f5;
+    --color-texto: #333;
+}
+
+/* Reset de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos del cuerpo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--color-neutro);
+    color: var(--color-texto);
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; /* Centra horizontalmente */
+    min-height: 100vh;
+}
+
+/* Estilos del menú de navegación */
+nav {
+    background-color: var(--color-neutro);
+    padding: 10px 20px; 
+    width: 100%; 
+}
+
+nav ul {
+    list-style: none; 
+    padding: 0; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+nav ul li {
+    margin: 0 15px; 
+}
+
+nav ul li a {
+    color: #4141ed; 
+    text-decoration: none; 
+    padding: 10px; 
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+/* Cambiar el color del botón activo */
+nav ul li a.active {
+    color: rgb(0, 200, 255); 
+    background-color: var(--color-primario); 
+    border-radius: 4px; 
+}
+
+/* Cambiar el color de los botones en otras secciones */
+nav ul li a.inicio {
+    background-color: #1d144d; /* Color para Inicio */
+}
+
+nav ul li a.presupuesto {
+    background-color: #2196F3; /* Color para Presupuesto */
+}
+
+nav ul li a.productos {
+    background-color: #FF5722; /* Color para Productos */
+}
+
+nav ul li a.contacto {
+    background-color: #4CAF50; /* Color para Contacto */
+}
+
+/* Efecto hover para todos los botones */
+nav ul li a:hover {
+    color: rgb(190, 0, 32); 
+}
+
+nav ul li a.inicio:hover {
+    background-color: #1bd5e6; /* Verde más oscuro para Inicio */
+}
+
+nav ul li a.presupuesto:hover {
+    background-color: #0b7dda; /* Azul más oscuro para Presupuesto */
+}
+
+nav ul li a.productos:hover {
+    background-color: #e64a19; /* Naranja más oscuro para Productos */
+}
+
+nav ul li a.contacto:hover {
+    background-color: #388E3C; /* Verde más oscuro para Contacto */
+}
+
+/* Estilos del header */
+.header-container {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+}
+
+.logo {
+    max-width: 100px; 
+    height: auto; 
+}
+
+header {
+    background-color: #ffffff; 
+    padding: 20px; 
+    text-align: center; 
+}
+
+main {
+    display: flex;
+    justify-content: center; /* Centra el contenido en el eje horizontal */
+    align-items: center; /* Centra el contenido en el eje vertical */
+    flex-direction: column; /* Asegura que el contenido se apile verticalmente */
+    padding: 20px; /* Añade un poco de espaciado */
+    width: 50%; 
+    text-align: center; /* Asegura que el main ocupe el ancho completo */
+}
+
+/* Estilos de las secciones centradas */
+.contenido {
+    display: none; /* Ocultar las secciones por defecto */
+    max-width: 800px; /* Define un ancho máximo para la caja */
+    margin: 50px auto; /* Centrar la caja horizontalmente y añadir margen superior */
+    padding: 20px; /* Añadir espacio dentro de la caja */
+    background-color: #f9f9f9; /* Color de fondo suave */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añadir sombra a la caja */
+    text-align: center; /* Centrar el texto */
+}
+
+/* Mostrar las secciones correspondientes al hacer clic en el enlace */
+#importancia:target,
+#consejos:target,
+#avances:target {
+    display: block; /* Mostrar las secciones cuando se seleccionan */
+}
+
+/* Estilo de los títulos dentro de las cajas */
+.contenido h2 {
+    font-size: 24px;
+    color: var(--color-primario);
+    margin-bottom: 20px;
+}
+
+/* Estilo de los párrafos dentro de las cajas */
+.contenido p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--color-texto);
+}
+
+#bienvenida {
+    display: block;
+    text-align: center;
+}
+
+/* When targeting a specific section, hide the welcome */
+#importancia:target ~ #bienvenida,
+#consejos:target ~ #bienvenida,
+#avances:target ~ #bienvenida {
+    display: none;  
+}
+
+/* Show the targeted section */
+#importancia:target,
+#consejos:target,
+#avances:target {
+    display: block;
+    text-align: center;
+}
+
+/* Ensure sections other than the targeted one are hidden */
+#bienvenida,
+#importancia,
+#consejos,
+#avances {
+    display: none;
+}
+
+/* Show the welcome section when no specific section is targeted */
+body:not(:has(:target)) #bienvenida {
+    display: block;
+    margin-top: 40px;
+}
+
+/* Asegúrate de que las secciones no se superpongan */
+main {
+    margin-top: 40px; /* Añadir margen superior si es necesario */
+}
+
+/* Estilos del footer */
+footer {  
+    background-color: var(--color-primario); 
+    color: rgb(255, 255, 255); 
+    padding: 20px; 
+    text-align: center; 
+    margin-top: auto; 
+}
+
+.footer-container {
+    max-width: 1200px; 
+    margin: 0 auto; 
+}
+
+/* Estilos para el formulario de presupuesto */
+#formulario-presupuesto {
+    display: flex; 
+    flex-direction: column; 
+    max-width: 400px; 
+    margin: 0 auto; 
+}
+
+#formulario-presupuesto label {
+    margin-bottom: 5px; 
+}
+
+#formulario-presupuesto input,
+#formulario-presupuesto textarea,
+#formulario-presupuesto button {
+    margin-bottom: 15px; 
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    width: 100%; 
+    box-sizing: border-box; 
+}
+
+#formulario-presupuesto button {
+    background-color: var(--color-primario); 
+    color: #fff; 
+    cursor: pointer; 
+}
+
+#formulario-presupuesto button:hover {
+    background-color: var(--color-complementario); 
+}
+
+/* Estilos adicionales para la galería */
+.galeria {
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px; 
+    padding: 20px; 
+    margin-bottom: 20px; 
+}
+
+.galeria-item {
+    text-align: center; 
+    position: relative; 
+}
+
+.galeria-img {
+    width: 100%; 
+    height: 200px; 
+    object-fit: cover; 
+    border-radius: 8px; 
+    transition: transform 0.3s; 
+}
+
+.galeria-img:hover {
+    transform: scale(1.05); 
+}
+
+.overlay {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none; 
+    justify-content: center; 
+    align-items: center; 
+    background-color: rgba(0, 0, 0, 0.7); 
+    border-radius: 8px; 
+}
+
+.galeria-item:hover .overlay {
+    display: flex; 
+}
+
+.galeria-img-ampliada {
+    max-width: 80%; 
+    max-height: 80%; 
+    border-radius: 8px; 
+    transition: transform 0.3s; 
+}
+
+/* Estilos para redes sociales */
+.redes-sociales img {
+    width: 20px; 
+    height: auto;
+    margin: 0 10px;
+    transition: transform 0.3s;
+}
+
+.redes-sociales img:hover {
+    transform: scale(1.1); 
+}
+
+/* Estilo para los enlaces de navegación */
+nav.sub-nav ul li a {
+    color: white; /* Cambia a tu color deseado */
+    background-color: rgb(75, 75, 248); /* Cambia a tu color deseado */
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 20px; /* Añade bordes redondeados */
+    margin-right: 10px; /* Espaciado entre botones */
+}
+
+/* Estilo específico para los botones que quieres cambiar */
+nav.sub-nav ul li a:hover {
+    background-color: darkblue; /* Color al pasar el mouse */
+}
+
+/* Cambiar el color de los botones específicos */
+nav.sub-nav ul li a:nth-child(1) {
+    background-color: #1d144d; /* Verde para Importancia de la Salud Dental */
+}
+
+nav.sub-nav ul li a:nth-child(2) {
+    background-color: #2196F3; /* Azul para Consejos para el Cuidado Dental */
+}
+
+nav.sub-nav ul li a:nth-child(3) {
+    background-color: #FF5722; /* Naranja para Avances en Odontología */
+}
+
+/* Cambiar el color al pasar el mouse */
+nav.sub-nav ul li a:nth-child(1):hover {
+    background-color: #1bd5e6; /* Verde más oscuro */
+}
+
+nav.sub-nav ul li a:nth-child(2):hover {
+    background-color: #0b7dda; /* Azul más oscuro */
+}
+
+nav.sub-nav ul li a:nth-child(3):hover {
+    background-color: #e64a19; /* Naranja más oscuro */
+}
